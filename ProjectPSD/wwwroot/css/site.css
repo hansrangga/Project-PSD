@@ -1,0 +1,48 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.side-menu {
+    position: fixed;
+    width: 15%;
+    height: 100%;
+    left: 0px;
+    top: 0px;
+    list-style: none;
+    background-color: #00D894;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.side-menu ul li a {
+    display: flex;
+    padding: 25px;
+    text-decoration: none;
+    color: #000000;
+    font-weight: bold;
+    font-family: 'Glass Antiqua', cursive;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 30px;
+    align-items: center;
+    text-align: center;
+}
+
+.side-menu li a i {
+    margin-right: 15px;
+}
+
+.panggil-pelayan {
+    position: absolute;
+    bottom: 0;
+}
+
+.main {
+    margin-left = 15%;
+    width = 85%;
+}

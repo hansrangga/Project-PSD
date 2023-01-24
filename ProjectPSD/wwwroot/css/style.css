@@ -1,0 +1,310 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+    font-family: 'Livvic', sans-serif;
+}
+
+.main {
+    display: flex;
+    position: relative;
+    margin-left: 15%;
+    height: 100%;
+}
+
+.main .main-content {
+    width: 100%;
+    height: 100%;
+}
+
+.main .main-content .banner {
+    height: 400px;
+    background-image: url('../image/Food.jpg');
+}
+
+.main .main-content .banner h2 {
+    color: #000000;
+    text-align: center;
+    padding: 150px 0;
+    font-weight: 500;
+    font-size: 30px;
+    line-height: 30px;
+}
+
+.welcome-text {
+    color: #000000;
+    text-align: center;
+    margin: 21px 0;
+    font-size: 32px;
+    font-weight: 500;
+    line-height: 32px;
+}
+
+.main .main-content hr {
+    display: block;
+    margin: 20px auto 58px auto;
+    width: 50%;
+}
+
+.main .main-content .carousel {
+    max-width: 428px;
+    position: relative;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
+}
+
+.main .main-content .carousel-item {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.main .main-content .carousel .carousel-item,
+.main .main-content .carousel .carousel-item-hidden {
+    display: none; /* hide all slide images not currently being viewed */
+}
+
+.main .main-content .carousel .carousel-item-visible {
+    display: block; /* show current slide image */
+    animation: fadeVisibility 0.5s; /* for fading effect when switching between slides */
+}
+
+.main .main-content .carousel .carousel-item img {
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+}
+
+/* Navigation control styles */
+.main .main-content .carousel .carousel-actions {
+    display: flex;
+    width: 100%;
+    justify-content: space-between; /* put space between the navigation buttons */
+    position: absolute; /* position navigation buttons on top */
+    margin-top: 40%; /* center navigation buttons on the slide */
+    transform: translateY(-50%); /* align navigation buttons */
+}
+
+.main .main-content .carousel .carousel-actions button {
+    border-radius: 50px;
+    background-color: white;
+    border: 0;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+}
+
+.main .main-content .carousel .carousel-actions button#carousel-button-prev {
+    margin-left: 20px; /* prevent previous button from touching the side*/
+}
+
+.main .main-content .carousel .carousel-actions button#carousel-button-next {
+    margin-right: 20px;  /* prevent next button from touching the side*/
+}
+
+.main .main-content .carousel-dots {
+    text-align: center; 
+}
+
+.main .main-content .dot {
+    margin-top: 70%;
+    opacity: 0.7; /* gray out dots for slides not being visted */
+}
+
+.main .main-content .dot:focus {
+    border: 1px solid black; /* dot for currently visited slide */
+}
+
+/* hanlde smooth transitions between slides */
+@keyframes fadeVisibility {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Panggil Pelayan Style */
+.page-pelayan {
+    height: 100%;
+    width: 100%;
+}
+
+.icon-pelayan {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 200px auto 30px auto;
+}
+
+.text-pelayan {
+    font-family: 'Inter', sans-serif;
+    color:#000000;
+}
+
+.text-pelayan p {
+    text-align: center;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 40px;
+    margin: 5px 0;
+}
+
+.btn-pelayan {
+    background: #2DFFA7;
+    border: 1px solid #000000;
+    border-radius: 4px;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    font-style: normal;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 27px;
+    cursor: pointer;
+    display: block;
+    margin: 41px auto;
+    width: 300px;
+    height: 75px;
+    box-sizing: border-box;
+}
+
+.btn-pelayan:hover {
+    background: #00F1A6;
+    color: #fff;
+    border: 1px solid #000000;
+}
+
+/* Checkout Success Style */
+.checkout-succes {
+    width: 100%;
+    height: 100%;
+}
+
+.icon-succes {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 150px auto 0 auto;
+}
+
+.text-succes {
+    text-align: center;
+    font-family: 'Inter', sans-serif;
+    color:#000000;
+}
+
+.text-succes p {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 44px;
+    margin-bottom: 10px;
+}
+
+.text-succes h2 {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 55px;
+    line-height: 60px;
+    margin-bottom: 20px;
+}
+
+.btn-succes {
+    background: #2DFFA7;
+    border: 1px solid #000000;
+    border-radius: 4px;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+    display: block;
+    margin: 41px auto;
+    text-align: center;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 24px;
+    line-height: 29px;
+    width: 300px;
+    height: 75px;
+    box-sizing: border-box;
+}
+
+.btn-succes:hover {
+    background: #00F1A6;
+    color: #fff;
+    border: 1px solid #000000;
+}
+
+.product-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    height: 20%;
+    margin-top: 10%;
+}
+
+.product-img {
+    width: 20%;
+    height: 20%;
+}
+
+.product-details {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10%;
+}
+
+.text-product {
+    font-family: 'Inter', sans-serif;
+    color:#000000;
+}
+
+.text-product p {
+    text-align: center;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 40px;
+    margin: 5px 0;
+}
+
+.text-product a {
+    text-align: center;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 40px;
+    margin: 5px 0;
+    text-decoration: none;
+    color: blue;
+}
+
+.cart{
+    margin-left: 30%;
+    margin-right: 15%;
+    margin-top: 5%;
+}
+
+.cart table th{
+    text-align: center;
+}
+
+.cart table td{
+    text-align: center;
+}
+
+.purchase-form{
+    font-size:22px;
+}
+
+.purchase-button {
+    position: absolute;
+    left: 50%;
+}

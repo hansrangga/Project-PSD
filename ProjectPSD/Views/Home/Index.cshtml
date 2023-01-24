@@ -1,0 +1,52 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+    <div class="side-menu">
+        <ul>
+            <li><a href="../Home/Index"><i class="fa-solid fa-house"></i> Menu Utama</a></li>
+            <li><a href="../Products/Menu/1"><i class="fa-solid fa-book-open"></i> Menu</a></li>
+            <li><a href="../Carts"><i class="fa-solid fa-cart-shopping"></i> Pesanan</a></li>
+        </ul>
+        <ul class="panggil-pelayan">
+            <li><a href="../Home/WaiterCall"><i class="fa-solid fa-bell-concierge"></i> Panggil Pelayan</a></li>
+        </ul>
+    </div>
+
+    <div class="main">
+        
+        <div class="main-content">
+            <div class="banner">
+                <h2>Nama Restoran</h2>
+            </div>
+            <h2 class="welcome-text">Selamat Datang!</h2>
+            <hr>
+            <div class="carousel">
+
+                <!-- Image Carousel -->
+                <div class="carousel-item carousel-item-visible">
+                    <img src="~/image/spaghetticarbonara.jpg" alt="img error" />
+                </div>
+                <div class="carousel-item">
+                    <img src="~/image/trufflefries.jpg" alt="img error" />
+                </div>
+                <div class="carousel-item">
+                    <img src="~/image/chickencordonbleu.jpg"  alt="img error" />
+                </div>
+
+                <!-- Button Control -->
+                <div class="carousel-actions">
+                    <button id="carousel-button-prev" aria-label="Previous"><</button>
+                    <button id="carousel-button-next" aria-label="Next">></button>
+                </div>
+
+                <!-- Dots Control -->
+                <div class="carousel-dots">
+                    <input class="dot selected-dot" type="radio" name="dot" checked />
+                    <input class="dot" type="radio" name="dot" />
+                    <input class="dot" type="radio" name="dot" />
+                </div>
+                
+            </div>
+        </div>
+    </div>

@@ -1,0 +1,29 @@
+﻿@{
+    ViewData["Title"] = "WaiterCall";
+}
+
+        <div class="side-menu">
+            <ul>
+                <li><a href="../Home/Index"><i class="fa-solid fa-house"></i> Menu Utama</a></li>
+                <li><a href="../Products/Menu/1"><i class="fa-solid fa-book-open"></i> Menu</a></li>
+                <li><a href="../Carts"><i class="fa-solid fa-cart-shopping"></i> Pesanan</a></li>
+            </ul>
+            <ul class="panggil-pelayan">
+                <li><a href="../Home/WaiterCall"><i class="fa-solid fa-bell-concierge"></i> Panggil Pelayan</a></li>
+            </ul>
+        </div>
+
+        <div class="main">
+            <div class="page-pelayan">
+                <div class="icon-pelayan">
+                    <img src="~/assets/images/checkout-successful.png" alt="">
+                </div>
+                <div class="text-pelayan">
+                    <p>Waiter telah dipanggil ke meja anda</p>
+                    <p>Mohon tunggu</p>
+                </div>
+                <a href="../Home/Index">
+                    <button id="btn-pelayan" class="btn-pelayan">Kembali ke Laman Utama</button>
+                </a>
+            </div>
+        </div>

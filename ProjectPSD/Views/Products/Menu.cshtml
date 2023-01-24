@@ -1,0 +1,43 @@
+﻿@model IEnumerable<ProjectPSD.Models.Product>
+
+@{
+    ViewData["Title"] = "Menu";
+}
+
+<div class="side-menu">
+    <ul>
+        <li><a href="../../Home/Index"><i class="fa-solid fa-house"></i> Menu Utama</a></li>
+        <li><a href="../Menu/1"><i class="fa-solid fa-book-open"></i> Menu</a></li>
+        <li><a href="../../Carts"><i class="fa-solid fa-cart-shopping"></i> Pesanan</a></li>
+    </ul>
+    <ul class="panggil-pelayan">
+        <li><a href="../../Home/WaiterCall"><i class="fa-solid fa-bell-concierge"></i> Panggil Pelayan</a></li>
+    </ul>
+</div>
+
+<div class="category-menu">
+    <ul>
+        <li><a href="../../Products/Menu/1"> Appetizer</a></li>
+        <li><a href="../../Products/Menu/2"> Main</a></li>
+        <li><a href="../../Products/Menu/3"> Soup</a></li>
+        <li><a href="../../Products/Menu/4"> Dessert</a></li>
+        <li><a href="../../Products/Menu/5"> Drinks</a></li>
+    </ul>
+</div>
+
+<div class="main-menu">
+    @foreach (var item in Model) {
+        
+            <div class="item"> 
+                <img src="~/image/@Html.DisplayFor(modelItem => item.ImagePath)" alt="img_error" class="img">
+                <div class="menuDetails">
+                    <div class="menu_name">@Html.DisplayFor(modelItem => item.ProductName)</div>
+                    <div class="menu_price">@Html.DisplayFor(modelItem => item.Price)</div>
+                </div>
+                <div class="addButton">
+                   <a asp-action="Details" asp-route-id="@item.Id"><i class="fa-solid fa-circle-plus fa-2xl"></i></a>
+                </div>
+            </div>
+        
+    }
+</div>

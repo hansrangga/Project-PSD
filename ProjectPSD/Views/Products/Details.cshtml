@@ -1,0 +1,33 @@
+﻿@model ProjectPSD.Models.Product
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<div class="side-menu">
+    <ul>
+        <li><a href="../../Home/Index"><i class="fa-solid fa-house"></i> Menu Utama</a></li>
+        <li><a href="../Menu/1"><i class="fa-solid fa-book-open"></i> Menu</a></li>
+        <li><a href="../../Carts"><i class="fa-solid fa-cart-shopping"></i> Pesanan</a></li>
+    </ul>
+    <ul class="panggil-pelayan">
+        <li><a href="../../Home/WaiterCall"><i class="fa-solid fa-bell-concierge"></i> Panggil Pelayan</a></li>
+    </ul>
+</div>
+
+<div class="main">
+
+<div class="page-pelayan">
+    <div class="product-image">
+        <img class="product-img" src="~/image/@Html.DisplayFor(model => model.ImagePath)" alt="error">
+    </div>
+    <div class="text-product">
+        <p>@Html.DisplayFor(model => model.ProductName)</p>
+        <p>Rp. @Html.DisplayFor(model => model.Price)</p>
+        <br />
+        <a asp-controller="Carts" asp-action="addToCart"><h4>Add to Cart</h4></a>
+        <a asp-action="Menu" asp-route-id="@Model?.CategoryID"><h4>Back to Menu</h4></a>
+    </div>
+</div>
+
+</div>

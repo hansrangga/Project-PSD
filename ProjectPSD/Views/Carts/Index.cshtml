@@ -1,0 +1,109 @@
+﻿@model IEnumerable<ProjectPSD.Models.Cart>
+
+@{
+    ViewData["Title"] = "Index";
+    int? total = 0;
+}
+
+<div class="side-menu">
+    <ul>
+        <li><a href="../../Home/Index"><i class="fa-solid fa-house"></i> Menu Utama</a></li>
+        <li><a href="../Products/Menu/1"><i class="fa-solid fa-book-open"></i> Menu</a></li>
+        <li><a href="#"><i class="fa-solid fa-cart-shopping"></i> Pesanan</a></li>
+    </ul>
+    <ul class="panggil-pelayan">
+        <li><a href="../../Home/WaiterCall"><i class="fa-solid fa-bell-concierge"></i> Panggil Pelayan</a></li>
+    </ul>
+</div>
+
+<div class="cart">
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Product Name
+            </th>
+            <th></th>
+            <th>
+                @Html.DisplayNameFor(model => model.Quantity)
+            </th>
+            <th></th>
+            <th>
+                Price per Quantity
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Price)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+                { total = total + item.Price; }
+                <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProductName)
+            </td>
+            <td>
+                <form asp-action="minus" asp-route-id="@item.Id">
+                    <input type="hidden" asp-for="@item.Id" />
+                    <input type="submit" value="-" class="btn btn-outline-info btn-sm" />
+                </form>
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Quantity)
+            </td>
+            <td>
+                <form asp-action="plus" asp-route-id="@item.Id">
+                    <input type="hidden" asp-for="@item.Id" />
+                    <input type="submit" value="+" class="btn btn-outline-info btn-sm" />
+                </form>
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DeffaultPrice)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            <td>
+                <form asp-action="Delete" asp-route-id="@item.Id">
+                    <input type="submit" value="Remove" class="btn btn-outline-danger" />
+                </form>
+            </td>
+        </tr>
+}
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <th>
+                Grand Total
+            </th>
+            <td>
+                @total
+            </td>
+            <td></td>
+        </tr>
+    </tbody>
+    
+</table>
+
+    <div class="purchase-form">
+
+    <input type="radio" id="cash" name="payment_method" value="cash" checked>
+    <label for="cash">Cash</label><br>
+    <input type="radio" id="e-wallet" name="payment_method" value="e-wallet" checked>
+    <label for="e-wallet">OVO / GoPay / Dana</label><br>
+    <input type="radio" id="debit" name="payment_method" value="debit">
+    <label for="debit">Debit</label><br>
+    <input type="radio" id="credit" name="payment_method" value="credit">
+    <label for="credit">Credit</label><br>
+
+    <form asp-action="Purchase" class="purchase-button">
+        <input type="submit" value="Purchase" class="btn btn-outline-success"
+    </form>
+
+    </div>
+
+</div>
